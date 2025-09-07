@@ -125,10 +125,15 @@
   .festival-card {
     border: 2px solid var(--brand-red-hex);
     box-shadow: 0 0 15px rgba(213, 0, 0, 0.6);
+    transform: scale(1);
+    transform-origin: center;
+    will-change: transform, box-shadow;
     transition: box-shadow 200ms ease, transform 200ms ease;
   }
   .festival-card:hover {
     box-shadow: 0 0 25px rgba(255, 193, 7, 0.9);
+    transform: scale(1.03);
+    z-index: 10;
   }
 
   .cta-button {
