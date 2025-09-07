@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Slide {
   key: string;
@@ -37,6 +38,8 @@ const SLIDES: Slide[] = [
 export default function ArchiveSection() {
   const slides = useMemo(() => SLIDES, []);
   const [index, setIndex] = useState(0);
+  const [q, setQ] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -48,11 +51,35 @@ export default function ArchiveSection() {
   return (
     <section aria-label="Digital Archive" className="w-full min-h-screen bg-brand-black text-white py-12 md:py-16">
       <div className="max-w-6xl mx-auto px-4">
-        <header className="mb-12 md:mb-14 flex items-end justify-between">
+        <header className="mb-12 md:mb-14 flex items-end justify-between gap-4">
           <div>
-            <h2 className="text-3xl md:text-5xl font-semibold text-brand-yellow drop-shadow-md">Digital Archive</h2>
-            <p className="text-sm md:text-base text-neutral-300 ml-2 md:ml-6">Cultural Library for Sikkim</p>
+            <h2 className="text-3xl md:text-5xl font-semibold text-brand-yellow drop-shadow-md">
+              Digital Archive : Cultural Library For Sikkim
+            </h2>
           </div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              const query = q.trim();
+              if (query) navigate(`/events?query=${encodeURIComponent(query)}`);
+            }}
+            className="hidden sm:flex items-center gap-2"
+            role="search"
+            aria-label="Search cultural content"
+          >
+            <div className="relative">
+              <svg className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-brand-yellow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+              <input
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                placeholder="Search manuscripts, murals, chants, monasteries..."
+                className="pl-10 pr-3 py-2 rounded-lg bg-[hsl(var(--brand-black))] text-white border border-[var(--brand-yellow-hex)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-yellow-hex)]/70 placeholder:text-neutral-400 w-80"
+              />
+            </div>
+            <button type="submit" className="px-3 py-2 rounded-lg bg-[var(--brand-yellow-hex)] text-[hsl(var(--brand-black))] font-semibold hover:brightness-110 transition">
+              Search
+            </button>
+          </form>
         </header>
         <div className="overflow-hidden rounded-2xl ring-1 ring-white/10">
           <div
@@ -73,7 +100,7 @@ function ArchiveSlide({ slide }: { slide: Slide }) {
   return (
     <div className="w-full shrink-0">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
-        <div className="group relative h-72 md:h-[22rem] rounded-xl overflow-hidden border-2 border-[var(--brand-red-hex)] shadow-[0_0_15px_rgba(213,0,0,0.6)] transition-shadow duration-300 hover:shadow-[0_0_25px_rgba(255,193,7,0.9)]">
+        <div className="group relative h-72 md:h-[22rem] rounded-xl overflow-hidden border-2 border-[var(--brand-red-hex)] shadow-[0_0_15px_rgba(213,0,0,0.6)] transform-gpu transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(255,193,7,0.9)]">
           <div className="absolute inset-0 scale-[1.01] transition-transform duration-300 group-hover:scale-105">
             {/* marquee track with two copies to create seamless pan */}
             <div className="archive-marquee h-full w-[200%]">
