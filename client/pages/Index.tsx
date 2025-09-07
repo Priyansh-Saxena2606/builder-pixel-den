@@ -4,12 +4,15 @@ import { festivals } from "@/data/festivals";
 
 export default function Index() {
   return (
-    <Layout title="Events and Festivals in Sikkim">
-      <div className="space-y-6">
-        {festivals.slice(0, 3).map((item) => (
-          <FestivalCard key={item.id} item={item} />
-        ))}
-      </div>
-    </Layout>
+    <>
+      <Layout title="Events and Festivals in Sikkim">
+        <div className="space-y-6">
+          {festivals.slice(0, 3).map((item) => (
+            <FestivalCard key={item.id} item={item} />
+          ))}
+        </div>
+      </Layout>
+      <ArchiveSection />
+    </>
   );
 }
