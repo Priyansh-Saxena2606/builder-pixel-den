@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { FestivalCard } from "@/components/FestivalCard";
 import { festivals } from "@/data/festivals";
+import ArchiveSection from "@/components/ArchiveSection";
 
 export default function Index() {
   return (
