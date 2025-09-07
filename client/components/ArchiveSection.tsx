@@ -51,11 +51,12 @@ export default function ArchiveSection() {
   return (
     <section aria-label="Digital Archive" className="w-full min-h-screen bg-brand-black text-white py-12 md:py-16">
       <div className="max-w-6xl mx-auto px-4">
-        <header className="mb-12 md:mb-14 flex items-end justify-between gap-4">
-          <div>
+        <header className="mb-16 md:mb-20 flex items-center justify-between gap-8">
+          <div className="flex items-baseline flex-wrap gap-x-8 gap-y-2">
             <h2 className="text-3xl md:text-5xl font-semibold text-brand-yellow drop-shadow-md">
-              Digital Archive : Cultural Library For Sikkim
+              Digital Archive
             </h2>
+            <span className="text-white text-base md:text-xl">Cultural Library For Sikkim</span>
           </div>
           <form
             onSubmit={(e) => {
