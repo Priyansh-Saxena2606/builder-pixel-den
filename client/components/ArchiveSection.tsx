@@ -99,7 +99,7 @@ export default function ArchiveSection() {
 
 function ArchiveSlide({ slide }: { slide: Slide }) {
   return (
-    <div className="w-full shrink-0 group rounded-2xl overflow-hidden bg-transparent festival-card">
+    <div className="w-full shrink-0 group rounded-2xl overflow-hidden bg-[hsl(var(--brand-black))] festival-card">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
         <div className="relative h-72 md:h-[22rem] rounded-xl overflow-hidden transition-transform duration-300">
           <div className="absolute inset-0 scale-[1.01] transition-transform duration-300 group-hover:scale-105">
