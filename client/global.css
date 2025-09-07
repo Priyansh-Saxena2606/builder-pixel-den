@@ -162,3 +162,14 @@
     transform: translateX(4px);
   }
 }
+
+@layer utilities {
+  @keyframes marquee-pan {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .archive-marquee {
+    display: flex;
+    animation: marquee-pan 20s linear infinite;
+  }
+}
