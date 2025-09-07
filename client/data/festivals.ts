@@ -28,4 +28,31 @@ export const festivals: FestivalItem[] = [
     image:
       "https://images.pexels.com/photos/2565865/pexels-photo-2565865.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
+  {
+    id: "dashain",
+    title: "Dashain",
+    date: "Ashwin 30 – Kartik 40",
+    description:
+      "Dashain is celebrated with family gatherings, tika and jamara blessings, and traditional feasts across the region.",
+    image:
+      "https://images.pexels.com/photos/17599665/pexels-photo-17599665.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  },
+  {
+    id: "tihar",
+    title: "Tihar",
+    date: "Kartik 24 – 28",
+    description:
+      "Also known as the festival of lights, Tihar features rows of glowing diyas, rangoli art, and vibrant celebrations.",
+    image:
+      "https://images.pexels.com/photos/6138896/pexels-photo-6138896.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  },
+  {
+    id: "buddha-jayanti",
+    title: "Buddha Jayanti",
+    date: "Baisakh 19",
+    description:
+      "Commemorates the birth of Lord Buddha with prayers, processions, and offerings at monasteries and stupas.",
+    image:
+      "https://images.pexels.com/photos/8545514/pexels-photo-8545514.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  },
 ];
