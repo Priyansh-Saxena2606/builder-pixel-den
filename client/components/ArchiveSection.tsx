@@ -48,7 +48,13 @@ export default function ArchiveSection() {
   return (
     <section aria-label="Digital Archive" className="w-full min-h-screen bg-brand-black text-white py-12 md:py-16">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="overflow-hidden rounded-2xl">
+        <header className="mb-8 flex items-end justify-between">
+          <div>
+            <h2 className="text-3xl md:text-5xl font-semibold text-brand-yellow drop-shadow-md">Digital Archive</h2>
+            <p className="text-sm md:text-base text-neutral-300">Cultural Library for Sikkim</p>
+          </div>
+        </header>
+        <div className="overflow-hidden rounded-2xl ring-1 ring-white/10">
           <div
             className="flex transition-transform duration-700 ease-out"
             style={{ transform: `translateX(-${index * 100}%)` }}
