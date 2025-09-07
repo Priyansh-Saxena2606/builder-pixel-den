@@ -10,8 +10,8 @@ export interface FestivalItem {
 
 export function FestivalCard({ item, className }: { item: FestivalItem; className?: string }) {
   return (
-    <div className={cn("festival-card rounded-xl overflow-hidden bg-transparent", className)}>
-      <div className="flex flex-col sm:flex-row items-stretch">
+    <div className={cn("festival-card rounded-xl overflow-hidden bg-transparent relative", className)}>
+      <div className="flex flex-col sm:flex-row items-stretch pointer-events-auto">
         <img
           src={item.image}
           alt={item.title}
