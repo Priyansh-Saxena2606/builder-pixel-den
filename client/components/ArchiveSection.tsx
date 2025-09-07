@@ -72,19 +72,19 @@ export default function ArchiveSection() {
 function ArchiveSlide({ slide }: { slide: Slide }) {
   return (
     <div className="w-full shrink-0">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
         <div className="group relative h-72 md:h-[22rem] rounded-xl overflow-hidden border-2 border-[var(--brand-red-hex)] shadow-[0_0_15px_rgba(213,0,0,0.6)] transition-shadow duration-200 hover:shadow-[0_0_25px_rgba(255,193,7,0.9)]">
           <div className="absolute inset-0 scale-[1.01] transition-transform duration-300 group-hover:scale-105">
             {/* marquee track with two copies to create seamless pan */}
             <div className="archive-marquee h-full w-[200%]">
-              <img src={slide.image} alt={slide.title} className="h-full w-1/2 object-cover" />
+              <img src={slide.image} alt={slide.title} className="h-full w-1/2 object-cover border-r-2 border-[var(--brand-red-hex)]" />
               <img src={slide.image} alt="" aria-hidden className="h-full w-1/2 object-cover" />
             </div>
           </div>
         </div>
-        <div className="p-4 md:p-0">
-          <h2 className="text-3xl md:text-4xl font-semibold text-brand-yellow drop-shadow">{slide.title}</h2>
-          <p className="mt-3 text-neutral-300 leading-relaxed max-w-prose">
+        <div className="p-4 md:p-0 md:pl-8">
+          <h2 className="text-3xl md:text-4xl font-semibold text-brand-yellow drop-shadow md:ml-2">{slide.title}</h2>
+          <p className="mt-5 text-neutral-300 leading-relaxed max-w-prose">
             {slide.description}
           </p>
         </div>
