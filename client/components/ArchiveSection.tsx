@@ -48,10 +48,10 @@ export default function ArchiveSection() {
   return (
     <section aria-label="Digital Archive" className="w-full min-h-screen bg-brand-black text-white py-12 md:py-16">
       <div className="max-w-6xl mx-auto px-4">
-        <header className="mb-8 flex items-end justify-between">
+        <header className="mb-12 md:mb-14 flex items-end justify-between">
           <div>
             <h2 className="text-3xl md:text-5xl font-semibold text-brand-yellow drop-shadow-md">Digital Archive</h2>
-            <p className="text-sm md:text-base text-neutral-300">Cultural Library for Sikkim</p>
+            <p className="text-sm md:text-base text-neutral-300 ml-2 md:ml-6">Cultural Library for Sikkim</p>
           </div>
         </header>
         <div className="overflow-hidden rounded-2xl ring-1 ring-white/10">
