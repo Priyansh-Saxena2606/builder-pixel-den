@@ -56,7 +56,7 @@ export default function ArchiveSection() {
             <h2 className="text-3xl md:text-5xl font-semibold text-brand-yellow drop-shadow-md">
               Digital Archive
             </h2>
-            <p className="text-white text-base md:text-xl">Cultural Library For Sikkim</p>
+            <h3 className="text-white text-base md:text-xl">Cultural Library For Sikkim</h3>
           </div>
           <form
             onSubmit={(e) => {
