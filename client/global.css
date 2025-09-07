@@ -57,6 +57,14 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Brand palette in HSL and HEX (for shadows) */
+    --brand-red: 0 100% 41%; /* #d50000 */
+    --brand-yellow: 45 100% 50%; /* #ffc107 */
+    --brand-black: 0 0% 10%; /* #1a1a1a */
+    --brand-red-hex: #d50000;
+    --brand-yellow-hex: #ffc107;
+    --brand-black-hex: #1a1a1a;
   }
 
   .dark {
@@ -95,6 +103,11 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Keep brand colors constant in dark mode */
+    --brand-red: 0 100% 41%;
+    --brand-yellow: 45 100% 50%;
+    --brand-black: 0 0% 10%;
   }
 }
 
@@ -105,5 +118,16 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .festival-card {
+    border: 2px solid var(--brand-red-hex);
+    box-shadow: 0 0 15px rgba(213, 0, 0, 0.6);
+    transition: box-shadow 200ms ease, transform 200ms ease;
+  }
+  .festival-card:hover {
+    box-shadow: 0 0 25px rgba(255, 193, 7, 0.9);
   }
 }
