@@ -41,7 +41,7 @@ export default function ArchiveSection() {
   useEffect(() => {
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % slides.length);
-    }, 5000);
+    }, 6500);
     return () => clearInterval(id);
   }, [slides.length]);
 
@@ -56,7 +56,7 @@ export default function ArchiveSection() {
         </header>
         <div className="overflow-hidden rounded-2xl ring-1 ring-white/10">
           <div
-            className="flex transition-transform duration-700 ease-out"
+            className="flex transition-transform duration-1000 ease-in-out"
             style={{ transform: `translateX(-${index * 100}%)` }}
           >
             {slides.map((s) => (
@@ -77,7 +77,7 @@ function ArchiveSlide({ slide }: { slide: Slide }) {
           <div className="absolute inset-0 scale-[1.01] transition-transform duration-300 group-hover:scale-105">
             {/* marquee track with two copies to create seamless pan */}
             <div className="archive-marquee h-full w-[200%]">
-              <img src={slide.image} alt={slide.title} className="h-full w-1/2 object-cover border-r-2 border-[var(--brand-red-hex)]" />
+              <img src={slide.image} alt={slide.title} className="h-full w-1/2 object-cover" />
               <img src={slide.image} alt="" aria-hidden className="h-full w-1/2 object-cover" />
             </div>
           </div>
